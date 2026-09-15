@@ -1,0 +1,38 @@
+type Contact @table {
+  phoneNumber: String!
+  name: String!
+  consentStatus: String! # GRANTED, REVOKED, PENDING
+  email: String
+  tags: [String]
+  customMetadata: String
+}
+
+type ConsentLog @table {
+  contact: Contact!
+  action: String! # OPT_IN, OPT_OUT
+  timestamp: Timestamp!
+  ipAddress: String!
+}
+
+type Template @table {
+  name: String!
+  category: String!
+  bodyContent: String!
+  languageCode: String!
+  headerText: String
+  footerText: String
+}
+
+type Campaign @table {
+  name: String!
+  status: String! # DRAFT, SCHEDULED, SENDING, COMPLETED
+  scheduledAt: Timestamp!
+  template: Template!
+}
+
+type MessageLog @table {
+  campaign: Campaign!
+  contact: Contact!
+  status: String! # SENT, DELIVERED, READ, FAILED
+  sentAt: Timestamp!
+}

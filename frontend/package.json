@@ -1,0 +1,1 @@
+{"name":"frontend","version":"1.0.0","scripts":{"dev":"vite","build":"vite build"},"dependencies":{"@dataconnect/generated":"file:../src/dataconnect-generated","axios":"^1.7.2","firebase":"^12.19.0","react":"^18.3.1","react-dom":"^18.3.1","react-router-dom":"^6.23.1","recharts":"^2.12.7"},"devDependencies":{"@vitejs/plugin-react":"^4.3.1","typescript":"^5.4.5","vite":"^5.3.1"}}

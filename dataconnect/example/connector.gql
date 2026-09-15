@@ -1,0 +1,30 @@
+query ListContacts @auth(level: USER) {
+  contacts {
+    id
+    phoneNumber
+    name
+    consentStatus
+    email
+    tags
+  }
+}
+
+query ListCampaigns @auth(level: USER) {
+  campaigns {
+    id
+    name
+    status
+    scheduledAt
+    template {
+      id
+      name
+      category
+      bodyContent
+      languageCode
+    }
+  }
+}
+
+mutation CreateContact($phoneNumber: String!, $name: String!, $consentStatus: String!, $email: String, $tags: [String!]) @auth(level: USER) {
+  contact_insert(data: { phoneNumber: $phoneNumber, name: $name, consentStatus: $consentStatus, email: $email, tags: $tags })
+}

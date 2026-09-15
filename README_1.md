@@ -1,0 +1,2 @@
+# DispSafe
+SaaS de comunicação via WhatsApp Cloud API oficial com consentimento, opt-out e ComplianceService. Veja .env.example para credenciais. Frontend em /frontend, Backend em /backend, Prisma em /prisma.
